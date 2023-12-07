@@ -1,0 +1,32 @@
+20mNon-Stop 10:10AMDEL₹15,712Flat 200 off | Code TSAIR View Fare3 seats leftVistaraFlight Details10:20AMBOM4h 20m1 Stop (UDR)02:40PMDEL₹16,04
+9Flat 375 off | Code PTMUK View Fare3 seats leftVistaraFlight Details10:20AMBOM6h 25m1 Stop (UDR)04:45PMDEL₹16,049Flat 375 off | Code PTMUK View Fare5 se
+ats leftVistaraFlight Details06:55PMBOM5h1 Stop (GOX)11:55PMDEL₹16,123Flat 375 off | Code PTMUK View Fare2 seats leftAir India ExpressFlight Details12:10
+PMBOM8h 35m1 Stop (GOI)08:45PMDEL₹16,168Flat 350 off | Code PTMSKYBook Flight3 seats leftVistaraFlight Details07:30AMBOM2h 10mNon-Stop 09:40AMDEL₹16,472F
+lat 375 off | Code PTMUK View FareAir IndiaFlight Details07:00AMBOM2h 15mNon-Stop 09:15AMDEL₹16,472Flat 350 off | Code PTMSKYBook Flight2 seats leftAir I
+ndiaFlight Details04:00PMBOM2h 20mNon-Stop 06:20PMDEL₹16,472Flat 350 off | Code PTMSKYBook Flight3 seats leftAir IndiaFlight Details08:00AMBOM2h 20mNon-S
+top 10:20AMDEL₹16,472Flat 350 off | Code PTMSKYBook Flight4 seats leftAir IndiaFlight Details11:20AMBOM4h 35m1 Stop (LKO)03:55PMDEL₹16,577Flat 350 off | 
+Code PTMSKY View FareAir IndiaFlight Details06:35PMBOM5h 10m1 Stop (AMD)11:45PMDEL₹16,913Flat 350 off | Code PTMSKY View Fare1 seat leftIndiGoFlight Deta
+ils01:25PMBOM5h 25m1 Stop (IXR)06:50PMDEL₹16,997Flat 200 off | Code TSAIR View Fare4 seats leftAir India ExpressFlight Details12:15PMBOM11h 50m1 Stop (BB
+I)12:05AM(+1d)DEL₹17,265Flat 350 off | Code PTMSKYBook Flight4 seats leftVistaraFlight Details07:15AMBOM16h 40m1 Stop (GOX)11:55PMDEL₹17,383Flat 375 off 
+| Code PTMUK View Fare1 seat leftAir India ExpressFlight Details12:15PMBOM8h 50m1 Stop (BBI)09:05PMDEL₹17,895Flat 350 off | Code PTMSKYBook Flight3 seats
+ leftVistaraFlight Details12:10PMBOM4h 15m1 Stop (DED)04:25PMDEL₹18,466Flat 375 off | Code PTMUK View Fare4 seats leftAir India ExpressFlight Details09:1
+0AMBOM11h 55m1 Stop (BLR)09:05PMDEL₹19,237Book Flight2 seats leftIndiGoFlight Details08:15AMBOM5h 25m1 Stop (AMD)01:40PMDEL₹19,352Flat 200 off | Code TSA
+IR View FareAir India ExpressFlight Details06:00AMBOM6h 30m1 Stop (IXR)12:30PMDEL₹19,575Flat 350 off | Code PTMSKYBook Flight4 seats leftAir India Expres
+sFlight Details06:00AMBOM13h 40m1 Stop (IXR)07:40PMDEL₹19,575Flat 350 off | Code PTMSKYBook FlightAir India ExpressFlight Details09:10AMBOM9h 50m2 Stops 
+(BLR, STV)07:00PMDEL₹19,735 View FareAir IndiaFlight Details09:00AMBOM10h 45m1 Stop (MAA)07:45PMDEL₹23,360Flat 350 off | Code PTMSKY View FareAir IndiaFl
+ight Details03:30PMBOM17h 55m1 Stop (AMD)09:25AM(+1d)DEL₹24,473Flat 350 off | Code PTMSKY View FareAir IndiaFlight Details03:30PMBOM23h 35m1 Stop (AMD)03
+:05PM(+1d)DEL₹24,473Flat 350 off | Code PTMSKY View FareAir IndiaFlight Details03:30PMBOM8h 15m1 Stop (AMD)11:45PMDEL₹26,363Flat 350 off | Code PTMSKY Vi
+ew Fare4 seats leftAir IndiaFlight Details07:40AMBOM3h 30mNon-Stop 11:10AMDEL₹27,885Flat 350 off | Code PTMSKYBook FlightVistaraFlight Details09:15AMBOM7
+h 55m1 Stop (AMD)05:10PMDEL₹28,022Flat 375 off | Code PTMUK View Fare4 seats leftAir IndiaFlight Details11:20AMBOM10h1 Stop (LKO)09:20PMDEL₹30,334Flat 35
+0 off | Code PTMSKY View Fare1 seat leftIndiGoFlight Details01:10PMBOM5h 20m1 Stop (PAT)06:30PMDEL₹32,589Flat 200 off | Code TSAIR View FareAir IndiaFlig
+ht Details03:30PMBOM5h1 Stop (AMD)08:30PMDEL₹34,269Flat 350 off | Code PTMSKYBook Flight`
+
+
+
+echo "# flight_ticket_bot" >> README.md
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin https://github.com/Soumyojyotisaha/flight_ticket_bot.git
+  git push -u origin main
