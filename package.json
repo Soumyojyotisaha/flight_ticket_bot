@@ -1,0 +1,35 @@
+{
+  "name": "langchainjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "target": "ES2020",
+  "module": "nodenext",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coding-Crashkurse/LangChain-JS-Full-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coding-Crashkurse/LangChain-JS-Full-Course/issues"
+  },
+  "homepage": "https://github.com/Coding-Crashkurse/LangChain-JS-Full-Course#readme",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "faiss-node": "^0.2.3",
+    "langchain": "^0.0.96",
+    "node-fetch": "^3.3.2",
+    "openai": "^3.3.0",
+    "playwright": "^1.40.1",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^21.6.0"
+  }
+}
