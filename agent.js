@@ -1,10 +1,10 @@
-
 import { initializeAgentExecutorWithOptions } from "langchain/agents";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
 import dotenv from 'dotenv';
-import { getYatraResult} from './yatra.js' // Import the getYatraResult function
+import { getYatraResult } from './yatra.js'; // Import the getYatraResult function
+import { bookingResult } from './booking.js';
 import prompt from 'prompt-sync'; // Import the prompt module
 dotenv.config();
 
@@ -30,8 +30,40 @@ async function main() {
   );
 
   const langChainResult = await executor.run(`Get me the cheapest flight from ${origin} to ${destin} on ${trDate}. Yatra Result: ${yatraResult}`);
+  console.log(langChainResult);
+  const flightOptions = extractFlightOptions(langChainResult);
+  console.log(`Your Cheapest Flight options from ${origin} to ${destin} on ${trDate} are as follows :`);
+  displayFlightOptions(flightOptions);
 
-  console.log('LangChain Result:', langChainResult);
+  // Prompt user to select a flight
+  const selectedOption = getInput('Select a flight option (Enter the corresponding number): ');
+
+  // Save the price amount of the selected option in the flightChosen variable
+  const flightChosen = flightOptions[selectedOption - 1].flightCode;
+
+  // Initiate the booking process
+  const bookingProcessResult = await bookingResult(origin, destin, trDate, flightChosen);
+
+  console.log(bookingProcessResult);
+}
+
+function extractFlightOptions(langChainResult) {
+  const regex = /\d+\.\s.+Fare\s-\s([\d,]+)/g;
+  const matches = [...langChainResult.matchAll(regex)];
+
+  return matches.map((match, index) => ({
+    option: index + 1,
+    flightCode: `FL${index + 1}`, 
+    option: index + 1,
+    fare: parseFloat(match[1].replace(/,/g, '')), // Convert fare to a numeric value
+  }));
+}
+
+function displayFlightOptions(options) {
+  console.log('Flight Options:');
+  options.forEach((opt) => {
+    console.log(`${opt.option}. Flight Code: ${opt.flightCode}`);
+  });
 }
 
 main();

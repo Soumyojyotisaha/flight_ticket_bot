@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Coding-Crashkurse/LangChain-JS-Full-Course#readme",
   "dependencies": {
+    "autogpt": "^0.0.1",
     "csv-writer": "^1.6.0",
     "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
@@ -31,5 +32,8 @@
     "playwright": "^1.40.1",
     "prompt-sync": "^4.2.0",
     "puppeteer": "^21.6.0"
+  },
+  "devDependencies": {
+    "auto-playwright": "^1.14.0"
   }
 }
