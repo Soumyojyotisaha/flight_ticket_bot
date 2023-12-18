@@ -29,7 +29,7 @@ async function main() {
     }
   );
 
-  const langChainResult = await executor.run(`Get me the cheapest flight from ${origin} to ${destin} on ${trDate}. Yatra Result: ${yatraResult}`);
+  const langChainResult = await executor.run(`Get me the cheapest flight from ${origin} to ${destin} on ${trDate} from Yatra Result: ${yatraResult}.The results should be shown row-wise as 1,2,3....Show only top 5 results.`);
   console.log(langChainResult);
   const flightOptions = extractFlightOptions(langChainResult);
   console.log(`Your Cheapest Flight options from ${origin} to ${destin} on ${trDate} are as follows :`);
@@ -37,25 +37,21 @@ async function main() {
 
   // Prompt user to select a flight
   const selectedOption = getInput('Select a flight option (Enter the corresponding number): ');
-
-  // Save the price amount of the selected option in the flightChosen variable
-  const flightChosen = flightOptions[selectedOption - 1].flightCode;
-
+  const flightChosen =   flightOptions[selectedOption - 1].flightCode;
+  console.log (flightChosen);
   // Initiate the booking process
   const bookingProcessResult = await bookingResult(origin, destin, trDate, flightChosen);
-
   console.log(bookingProcessResult);
 }
 
 function extractFlightOptions(langChainResult) {
-  const regex = /\d+\.\s.+Fare\s-\s([\d,]+)/g;
+  const regex = /(\w{2}-\d{3,4}): Departure - \d{2}:\d{2} from .+Arrival - \d{2}:\d{2} in .+Duration - \d{1,2}h \d{1,2}m, Non-Stop, Fare - ([\d,]+)/g;
   const matches = [...langChainResult.matchAll(regex)];
 
   return matches.map((match, index) => ({
     option: index + 1,
-    flightCode: `FL${index + 1}`, 
-    option: index + 1,
-    fare: parseFloat(match[1].replace(/,/g, '')), // Convert fare to a numeric value
+    flightCode: match[1],
+    fare: parseFloat(match[2].replace(/,/g, '')),
   }));
 }
 
