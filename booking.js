@@ -32,6 +32,8 @@ async function bookingResult(origin, destin, trDate, flightChosen) {
   await page.getByTitle(`${trDate}`).click();
   await page.waitForTimeout(2000);
 
+  await page.getByText('Non Stop Flights').click();
+  
   // Search for flights
   await page.getByRole('button', { name: 'Search Flights' }).click();
   await page.waitForTimeout(2000);
@@ -76,8 +78,39 @@ async function bookingResult(origin, destin, trDate, flightChosen) {
 
   // Wait for confirmation and proceed
   await page.waitForTimeout(3000);
-  await page.getByRole('button', { name: 'Yes, Please' }).click();
+  const yesPleaseButton = page.getByRole('button', { name: 'Yes, Please' });
+
+if (yesPleaseButton) {
+  // Element found, click the button
+  await yesPleaseButton.click();
+} else {
+  await page.waitForTimeout(1000);
+  await page.getByRole('button', { name: 'Proceed To Payment' }).click();
   await page.waitForTimeout(3000);
+
+  // Continue without securing the connection
+  await page.getByRole('button', { name: 'Continue without securing' }).click();
+  await page.waitForTimeout(3000);
+
+  // Choose the UPI payment method
+  await page.getByRole('link', { name: 'UPI' }).click();
+  await page.waitForTimeout(3000);
+
+  // Enter UPI details and initiate payment
+  await page.getByLabel('Virtual Payment Address').click();
+  await page.waitForTimeout(2000);
+  await page.getByLabel('Virtual Payment Address').pressSequentially('7001813062@ybl', { delay: 100 });
+  await page.getByRole('button', { name: 'Pay Now' }).click();
+
+  // Wait for the payment to complete
+  await page.waitForTimeout(20000);
+
+  // Close the browser
+  await browser.close();
+
+}
+  // await page.getByRole('button', { name: 'Yes, Please' }).click();
+  await page.waitForTimeout(1000);
   await page.getByRole('button', { name: 'Proceed To Payment' }).click();
   await page.waitForTimeout(3000);
 
