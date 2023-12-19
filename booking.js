@@ -1,30 +1,28 @@
+// Import the Playwright library
 import playwright from 'playwright';
 
+// Function to handle the booking process on the Yatra website
 async function bookingResult(origin, destin, trDate, flightChosen) {
+  // Launch a Chromium browser instance
   const browser = await playwright.chromium.launch({
-    headless: false,
+    headless: false, // Set to true for headless mode
   });
 
+  // Create a new page in the browser
   const page = await browser.newPage();
-  await page.goto("https://secure.yatra.com/social/common/yatra/signin.htm");
-  await page.waitForTimeout(2000);
-  await page.fill('[placeholder="Email ID / Mobile Number"]', '8670489274');
-  await page.waitForTimeout(1000);
-  await page.click('[role="button"][name="Continue"]');
-  await page.waitForTimeout(2000);
-  await page.fill('[placeholder="Enter your password"]', 'Test@1234');
-  await page.waitForTimeout(2000);
-  await page.click('[role="button"][name="Login"]');
-  await page.waitForTimeout(2000);
-  await page.waitForURL('https://www.yatra.com/');
+
+  // Navigate to the Yatra website
+  await page.goto('https://www.yatra.com/');
+
+  // Wait for 2 seconds to ensure page load and stability
   await page.waitForTimeout(2000);
 
-  // Set origin
+  // Set origin airport
   await page.getByRole('textbox', { name: 'Depart From' }).click();
   await page.getByText(`(${origin})`).click();
   await page.waitForTimeout(2000);
 
-  // Set destination
+  // Set destination airport
   await page.getByRole('textbox', { name: 'Going To' }).click();
   await page.getByText(`(${destin})`).click();
   await page.waitForTimeout(2000);
@@ -38,15 +36,71 @@ async function bookingResult(origin, destin, trDate, flightChosen) {
   await page.getByRole('button', { name: 'Search Flights' }).click();
   await page.waitForTimeout(2000);
 
-  // Filter by price
-  await page.locator('span').filter({ hasText: 'Price' }).locator('span').click();
+  // Select the desired flight based on the chosen flight code
+  await page.click(`text=${flightChosen}`);
+  await page.waitForTimeout(3000);
 
-  // Search by price 
-  await page.getByText(`${flightChosen} Fare Summary Fare`).click();
-  
-  const successMessage = 'Login successful!';
+  // Click "Book Now" button
+  await page.click('text=Flight Details');
+  await page.waitForTimeout(3000);
+  await page.click('text=Book Now');
+
+  // Fill in user details for booking
+  await page.getByRole('textbox', { name: 'Email ID', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Email ID', exact: true }).pressSequentially('contact.soumyojyotisaha@gmail.com', { delay: 100 });
+  await page.waitForTimeout(2000);
+
+  await page.getByRole('textbox', { name: 'Mobile Number' }).click();
+  await page.getByRole('textbox', { name: 'Mobile Number' }).pressSequentially('7001813062', { delay: 100 });
+  await page.waitForTimeout(2000);
+
+  // Toggle the option to send booking details
+  await page.locator('label').filter({ hasText: 'Also send my booking details' }).locator('span i').click();
+
+  // Select passenger title and enter name details
+  await page.locator('#title0').selectOption('Mr');
+  await page.waitForTimeout(2000);
+  await page.getByPlaceholder('First & Middle Name').click();
+  await page.waitForTimeout(2000);
+  await page.getByRole('textbox', { name: 'First & Middle Name' }).pressSequentially('Soumyojyoti', { delay: 100 });
+  await page.waitForTimeout(2000);
+  await page.getByRole('textbox', { name: 'Last Name' }).pressSequentially('Saha', { delay: 100 });
+  await page.waitForTimeout(2000);
+
+  // Continue to the next step
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.waitForTimeout(3000);
+
+  // Confirm the booking
+  await page.locator('#traveller-dom').getByRole('button', { name: 'Confirm' }).click();
+
+  // Wait for confirmation and proceed
+  await page.waitForTimeout(3000);
+  await page.getByRole('button', { name: 'Yes, Please' }).click();
+  await page.waitForTimeout(3000);
+  await page.getByRole('button', { name: 'Proceed To Payment' }).click();
+  await page.waitForTimeout(3000);
+
+  // Continue without securing the connection
+  await page.getByRole('button', { name: 'Continue without securing' }).click();
+  await page.waitForTimeout(3000);
+
+  // Choose the UPI payment method
+  await page.getByRole('link', { name: 'UPI' }).click();
+  await page.waitForTimeout(3000);
+
+  // Enter UPI details and initiate payment
+  await page.getByLabel('Virtual Payment Address').click();
+  await page.waitForTimeout(2000);
+  await page.getByLabel('Virtual Payment Address').pressSequentially('7001813062@ybl', { delay: 100 });
+  await page.getByRole('button', { name: 'Pay Now' }).click();
+
+  // Wait for the payment to complete
+  await page.waitForTimeout(20000);
+
+  // Close the browser
   await browser.close();
-  return successMessage;
 }
 
+// Export the bookingResult function for external use
 export { bookingResult };
