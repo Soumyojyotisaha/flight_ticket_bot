@@ -1,7 +1,5 @@
 // Import necessary modules
 import playwright from 'playwright';
-import prompt from 'prompt-sync';
-
 // Function to get Yatra search results
 const getYatraResult = async (origin, destin, trDate) => {
   // Launch the Chromium browser
@@ -32,7 +30,7 @@ const getYatraResult = async (origin, destin, trDate) => {
   await page.waitForTimeout(2000);
 
   await page.getByText('Non Stop Flights').click();
-  
+
   // Search for flights
   await page.getByRole('button', { name: 'Search Flights' }).click();
   await page.waitForTimeout(5000);
