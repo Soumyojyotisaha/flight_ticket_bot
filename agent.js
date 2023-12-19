@@ -21,6 +21,7 @@ async function main() {
   const destin = getInput('Enter the destination airport code: ');
   const trDate = getInput('Enter the departure date (e.g., Friday, 5 January): ');
 
+  console.log("Please wait,while we fetch your preferred data.....");
   // Fetch Yatra results for the given parameters
   const yatraResult = await getYatraResult(origin, destin, trDate);
 
@@ -39,7 +40,7 @@ async function main() {
   );
 
   // Run the language model to generate a request for the cheapest flight
-  const langChainResult = await executor.run(`Get me the cheapest flight from ${origin} to ${destin} on ${trDate} from Yatra Result: ${yatraResult}.The results should be shown row-wise as 1,2,3....Show only top 5 results.Extract the booking links for each too and display `);
+  const langChainResult = await executor.run(`Get me the cheapest flight from ${origin} to ${destin} on ${trDate} from Yatra Result: ${yatraResult}.The results should be shown row-wise as 1,2,3....Show only top 5 results.The results should be in the format: example: Air India AI-560: Departure - 06:55 from New Delhi, Arrival - 09:20 in Hyderabad, Duration - 2h 25m, Non-Stop, Fare - 5,227 `);
   console.log(langChainResult);
 
   // Extract and display flight options from the language model result
@@ -56,7 +57,6 @@ async function main() {
   const bookingProcessResult = await bookingResult(origin, destin, trDate, flightChosen);
   console.log(bookingProcessResult);
 }
-
 // Function to extract flight options from the language model result
 function extractFlightOptions(langChainResult) {
   const regex = /(\w{2}-\d{3,4}): Departure - \d{2}:\d{2} from .+Arrival - \d{2}:\d{2} in .+Duration - \d{1,2}h \d{1,2}m, Non-Stop, Fare - ([\d,]+)/g;
