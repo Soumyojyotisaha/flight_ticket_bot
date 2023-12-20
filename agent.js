@@ -53,8 +53,10 @@ async function main() {
   const flightChosen = flightOptions[selectedOption - 1].flightCode;
   console.log(flightChosen);
 
+  const  divId = origin + destin + flightChosen.replace('-', '');
+
   // Initiate the booking process
-  const bookingProcessResult = await bookingResult(origin, destin, trDate, flightChosen);
+  const bookingProcessResult = await bookingResult(origin, destin, trDate, flightChosen,divId);
   console.log(bookingProcessResult);
 }
 // Function to extract flight options from the language model result
