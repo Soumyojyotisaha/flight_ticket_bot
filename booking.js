@@ -2,7 +2,7 @@
 import playwright from 'playwright';
 
 // Function to handle the booking process on the Yatra website
-async function bookingResult(origin, destin, trDate, flightChosen) {
+async function bookingResult(origin, destin, trDate, flightChosen,divId) {
   // Launch a Chromium browser instance
   const browser = await playwright.chromium.launch({
     headless: false, // Set to true for headless mode
@@ -40,12 +40,21 @@ async function bookingResult(origin, destin, trDate, flightChosen) {
 
   // Select the desired flight based on the chosen flight code
   await page.click(`text=${flightChosen}`);
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(1000);
 
-  // Click "Book Now" button
-  await page.click('text=Flight Details');
-  await page.waitForTimeout(3000);
-  await page.click('text=Book Now');
+  const first11Characters = divId.substring(0, 11);
+  await page.waitForTimeout(1000);
+  const divSelector = `div[id^="${first11Characters}"]`;
+  await page.waitForTimeout(2000);
+  await page.click(divSelector);
+  await page.waitForTimeout(2000);
+ // Click on the "Flight Details" element
+  await page.click(`${divSelector} .flight-detail`);
+  await page.waitForTimeout(2000);
+
+ // Click on the "Book Now" button
+ await page.click(`${divSelector} button.full-width.secondary-button`);
+ await page.waitForTimeout(2000);
 
   // Fill in user details for booking
   await page.getByRole('textbox', { name: 'Email ID', exact: true }).click();
