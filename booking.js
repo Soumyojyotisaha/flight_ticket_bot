@@ -56,6 +56,10 @@ async function bookingResult(origin, destin, trDate, flightChosen,divId) {
  await page.click(`${divSelector} button.full-width.secondary-button`);
  await page.waitForTimeout(2000);
 
+ await page.getByPlaceholder('Your Promo Code').click();
+ await page.locator('label').filter({ hasText: 'PAYUPI' }).locator('span').first().click();
+
+
   // Fill in user details for booking
   await page.getByRole('textbox', { name: 'Email ID', exact: true }).click();
   await page.getByRole('textbox', { name: 'Email ID', exact: true }).pressSequentially('contact.soumyojyotisaha@gmail.com', { delay: 100 });
