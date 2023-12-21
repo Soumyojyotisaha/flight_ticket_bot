@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import { getYatraResult } from './yatra.js';
 import { bookingResult } from './booking.js';
 import prompt from 'prompt-sync';
-
+import { extractVariables } from './openai.js';
 // Load environment variables from a .env file
 dotenv.config();
 
@@ -17,11 +17,9 @@ const getInput = prompt();
 // Main asynchronous function
 async function main() {
   // Get user input for origin, destination, and departure date
-  const origin = getInput('Enter the origin airport code: ');
-  const destin = getInput('Enter the destination airport code: ');
-  const trDate = getInput('Enter the departure date (e.g., Friday, 5 January): ');
+  const { origin, destin, trDate } = extractVariables(origin,destin,trDate);
 
-  console.log("Please wait,while we fetch your preferred data.....");
+  console.log("Please wait ⌛,while we fetch your preferred data 🔜.....");
   // Fetch Yatra results for the given parameters
   const yatraResult = await getYatraResult(origin, destin, trDate);
 

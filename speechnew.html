@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recognition Example</title>
+</head>
+<body>
+  <script>
+import { initializeAgentExecutorWithOptions } from "langchain/agents";
+import { ChatOpenAI } from "langchain/chat_models/openai";
+import { SerpAPI } from "langchain/tools";
+import { Calculator } from "langchain/tools/calculator";
+import dotenv from 'dotenv';
+
+// Ensure the browser environment supports SpeechRecognition
+if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+  dotenv.config();
+
+  // Function to format date
+  async function main() {
+    const userinput = await getUserVoiceInput('Ask Me Anything?');
+
+    // Create an array of tools
+    const tools = [new Calculator(), new SerpAPI()];
+
+    // Create a ChatOpenAI instance
+    const llm = new ChatOpenAI({ modelName: "gpt-3.5-turbo", temperature: 0 });
+
+    // Initialize the agent executor with options
+    const executor = await initializeAgentExecutorWithOptions(
+      tools,
+      llm,
+      {
+        agentType: "openai-functions",
+        verbose: false,
+      }
+    );
+
+    const userlangchain = await executor.run(userinput);
+    console.log(userlangchain);
+  }
+
+  // Call the main function
+  main();
+
+  // Function to get user input using voice recognition
+  function getUserVoiceInput(prompt) {
+    return new Promise((resolve, reject) => {
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        resolve(transcript);
+      };
+
+      recognition.onerror = (event) => {
+        reject(new Error('Voice recognition error'));
+      };
+
+      // Start listening
+      recognition.start();
+      console.log(prompt); // Optional: Log the prompt to console for user awareness
+
+      // Stop listening after a certain duration (e.g., 5000 milliseconds)
+      setTimeout(() => {
+        recognition.stop();
+      }, 5000);
+    });
+  }
+} else {
+  console.error('SpeechRecognition not supported in this browser.');
+}
+
+  </script>
+</body>
+</html>
