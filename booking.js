@@ -17,6 +17,11 @@ async function bookingResult(origin, destin, trDate, flightChosen,divId) {
   // Wait for 2 seconds to ensure page load and stability
   await page.waitForTimeout(2000);
 
+    //wait for 4 seconds to clear notification
+    await page.waitForTimeout(4000);
+    await page.frameLocator('iframe[name="notification-frame-31774170"]').locator('#webklipper-publisher-widget-container-notification-close-div').click();
+  
+
   // Set origin airport
   await page.getByRole('textbox', { name: 'Depart From' }).click();
   await page.getByText(`(${origin})`).click();
