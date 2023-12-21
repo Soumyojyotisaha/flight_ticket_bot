@@ -1,23 +1,21 @@
-// Import necessary modules and libraries
 import { initializeAgentExecutorWithOptions } from "langchain/agents";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
-import dotenv from 'dotenv';
+import   dotenv from 'dotenv';
 import { getYatraResult } from './yatra.js';
 import { bookingResult } from './booking.js';
 import prompt from 'prompt-sync';
-import { extractVariables } from './openai.js';
-// Load environment variables from a .env file
 dotenv.config();
 
 // Function to get user input using prompt-sync
 const getInput = prompt();
 
-// Main asynchronous function
 async function main() {
-  // Get user input for origin, destination, and departure date
-  const { origin, destin, trDate } = extractVariables(origin,destin,trDate);
+    // Get user input for origin, destination, and departure date
+    const origin = getInput('Enter the origin airport code: ');
+    const destin = getInput('Enter the destination airport code: ');
+    const trDate = getInput('Enter the departure date (e.g.,Friday, 5 January): ');
 
   console.log("Please wait ⌛,while we fetch your preferred data 🔜.....");
   // Fetch Yatra results for the given parameters
@@ -52,6 +50,7 @@ async function main() {
   console.log(flightChosen);
 
   const  divId = origin + destin + flightChosen.replace('-', '');
+  console.log("Your selected Airline ✈️ is:", divId);
 
   // Initiate the booking process
   const bookingProcessResult = await bookingResult(origin, destin, trDate, flightChosen,divId);
