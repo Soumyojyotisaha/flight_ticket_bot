@@ -2,6 +2,7 @@
 import dotenv from 'dotenv';
 import axios from 'axios';
 import promptSync from 'prompt-sync';
+import { agentResult } from './agent.js';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -49,6 +50,7 @@ const text=`⢸⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
 console.log(text);
 console.log('\n');
 console.log('\n');
+
 const userPrompt = prompt('Tell me where you want to travel ✈️  and on what date 📅 (format: MM/DD/YY)?');
 
 // Extract date from user prompt using regular expression and store it in userDate
@@ -72,7 +74,7 @@ const formattedDate = userDate
   : '';
 
 const fixedPrompt1 = `The user wants to travel from ${userPrompt} on ${formattedDate}, so print the Origin Airport code, Destination Airport Code, and trip Date (${formattedDate}Dont include Year in the ${formattedDate}).`;
-
+const fixedPrompt2= `The ${formattedDate} should be of the format example:{weekday, date month} like {Friday, 5 January}`;
 // Define a function to extract variables
 function extractVariables(answer) {
   const originMatch = answer.match(/Origin Airport Code: (\w+)/);
@@ -84,6 +86,7 @@ function extractVariables(answer) {
   const destin = destinMatch ? destinMatch[1] : 'N/A';
   const trDate = trDateMatch ? trDateMatch[1] : 'N/A';
 
+
   // Return the extracted values
   return { origin, destin, trDate };
 }
@@ -92,7 +95,7 @@ function extractVariables(answer) {
 axios.post(
   'https://api.openai.com/v1/engines/text-davinci-003/completions',
   {
-    prompt: `${fixedPrompt1}`,
+    prompt: `${fixedPrompt1}${fixedPrompt2}`,
     max_tokens: 100  // Adjust as needed
   },
   {
@@ -110,10 +113,11 @@ axios.post(
   // Extract information using the function
   const { origin, destin, trDate } = extractVariables(answer);
 
+  agentResult(origin,destin,trDate)
   // Print the extracted values
-  // console.log(origin);
-  // console.log(destin);
-  // console.log(trDate);
+  console.log(origin);
+  console.log(destin);
+  console.log(trDate);
 })
 .catch(error => {
   // Handle errors during the API request
@@ -122,4 +126,3 @@ axios.post(
 
 // Export the extractVariables function for external use
 export { extractVariables };
-
