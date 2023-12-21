@@ -1,4 +1,4 @@
-# Cheapest Flight Ticket Generation and Booking Via CLI-BOT
+# Cheapest Flight Ticket Generation and Booking CLI-BOT
 
 ## Overview
 
