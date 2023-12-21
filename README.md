@@ -34,5 +34,7 @@ Feel free to contribute to the project by submitting issues or pull requests. Fo
 
 4.**License:**
 This project is licensed under the MIT License - see the LICENSE file for details.
-```bash
 Replace the placeholders with your actual project details, and feel free to enhance the README based on your project's specific features and requirements.
+
+5.**Screenshots:**
+![terminal](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/terminal.png)
