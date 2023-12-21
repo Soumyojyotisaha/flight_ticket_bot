@@ -38,3 +38,12 @@ Replace the placeholders with your actual project details, and feel free to enha
 
 5.**Screenshots:**
 ![terminal](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/terminal.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/3.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/4.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/5.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/6.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/7.png)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/8.png)
+![payment](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/payment.jpg)
