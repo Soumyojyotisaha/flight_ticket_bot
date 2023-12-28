@@ -14,7 +14,7 @@ A Command Line Interface (CLI) bot designed to streamline the process of finding
 - **IDE_VS CODE:** Integrated Development Environment for code development.
 
 ## Framework Behind Langchain Agent Extractting the Cheapest Flight Data
-![Flight}(https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/19050608-2160-42f2-b03d-831d117513ae.jpg)
+![Flight](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/19050608-2160-42f2-b03d-831d117513ae.jpg)
 
 ## Getting Started
 
