@@ -44,7 +44,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Replace the placeholders with your actual project details, and feel free to enhance the README based on your project's specific features and requirements.
 
 5.**Screenshots:**
-[![Watch the video](thumbnail-image-url)](https://www.youtube.com/watch?v=VQsUKE263XI)
+[![Watch the video](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/gallery.jpg)](https://www.youtube.com/watch?v=VQsUKE263XI)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2.png)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2%60.png)
