@@ -43,9 +43,14 @@ Feel free to contribute to the project by submitting issues or pull requests. Fo
 This project is licensed under the MIT License - see the LICENSE file for details.
 Replace the placeholders with your actual project details, and feel free to enhance the README based on your project's specific features and requirements.
 
-5.**Screenshots:**
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=VQsUKE263XI">
+    <img src="https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/gallery.jpg" alt="Watch the video">
+  </a>
+</div>
 
-[![Watch the video](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/gallery.jpg)](https://www.youtube.com/watch?v=VQsUKE263XI)
+
+5.**Screenshots:**
 **Step 1**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
 **Step 2**
