@@ -4,8 +4,9 @@
 
 A Command Line Interface (CLI) bot designed to streamline the process of finding and booking the cheapest flight tickets for users. This bot integrates the latest langchain Model to gather user preferences and employs Playwright to automate interactions with Yatra.com. The langchain model analyzes scraped JSON data, presenting the top 5 cheapest flights. The bot guides the user through selecting a preferred ticket and utilizes Playwright for the final booking process. The entire end-to-end ticket booking process is automated, with user confirmation needed only for payment via phone notification.
 
-![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/videoplayback.gif)
-![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/videoplayback.mp4)
+<div align="center">
+  <img src="https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/videoplayback.gif" alt="ui">
+</div>
 
 ## Technologies Used
 
@@ -43,7 +44,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Replace the placeholders with your actual project details, and feel free to enhance the README based on your project's specific features and requirements.
 
 5.**Screenshots:**
-[![Watch the video]](https://www.youtube.com/watch?v=VQsUKE263XI)
+[![Watch the video](thumbnail-image-url)](https://www.youtube.com/watch?v=VQsUKE263XI)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2.png)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2%60.png)
