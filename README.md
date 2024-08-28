@@ -54,25 +54,26 @@ Replace the placeholders with your actual project details, and feel free to enha
 
 
 5.**Screenshots:**
+
 *Step 1: UI and Initial Welcome Gesture.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
 *Step 2: Scraping of relevant information using langchain.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2.png)
-**Step 3: Automated Searching the mentioned flight details.**
+*Step 3: Automated Searching the mentioned flight details.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2%60.png)
-**Step 4: Showing the top 5 cheapest flights.**
+*Step 4: Showing the top 5 cheapest flights.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/3.png)
-**Step 5: Asking user to select any one.**
+*Step 5: Asking user to select any one.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/4.png)
-**Step 6: Redirecting to the booking section.**
+*Step 6: Redirecting to the booking section.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/5.png)
-**Step 7: Filling passenger details.**
+*Step 7: Filling passenger details.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/6.png)
-**Step 8: Filling information.**
+*Step 8: Filling information.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/7.png)
-**Step 9: Adding relevant travel insurance.**
+*Step 9: Adding relevant travel insurance.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/8.png)
-**Step 10: Redirecting to the Payments page.**
+*Step 10: Redirecting to the Payments page.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/9.png)
-**Step 11: Initiating payment link in the user's device.**
+*Step 11: Initiating payment link in the user's device.*
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/10.jpg)
