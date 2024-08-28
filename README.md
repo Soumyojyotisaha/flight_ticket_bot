@@ -45,7 +45,10 @@ Replace the placeholders with your actual project details, and feel free to enha
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=VQsUKE263XI">
-    <img src="https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/gallery.jpg" alt="Watch the video">
+    <img src="https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/gallery.jpg" alt="Watch the video" style="position: relative;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; font-weight: bold; color: white; text-shadow: 2px 2px 4px #000000;">
+      Click Me
+    </div>
   </a>
 </div>
 
