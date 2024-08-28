@@ -44,15 +44,27 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Replace the placeholders with your actual project details, and feel free to enhance the README based on your project's specific features and requirements.
 
 5.**Screenshots:**
+
 [![Watch the video](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/gallery.jpg)](https://www.youtube.com/watch?v=VQsUKE263XI)
+**Step 1**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
+**Step 2**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2.png)
+**Step 3**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2%60.png)
+**Step 4**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/3.png)
+**Step 5**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/4.png)
+**Step 6**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/5.png)
+**Step 7**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/6.png)
+**Step 8**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/7.png)
+**Step 9**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/8.png)
+**Step 10**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/9.png)
+**Step 11**
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/10.jpg)
