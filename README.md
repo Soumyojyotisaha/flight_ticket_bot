@@ -41,6 +41,7 @@ Replace the placeholders with your actual project details, and feel free to enha
 
 5.**Screenshots:**
 [![Watch the video]](https://www.youtube.com/watch?v=VQsUKE263XI)
+![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/videoplayback.gif)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/1.png)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2.png)
 ![ui](https://github.com/Soumyojyotisaha/flight_ticket_bot/blob/main/screenshots/2%60.png)
